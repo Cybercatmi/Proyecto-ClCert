@@ -1,0 +1,80 @@
+[
+  {
+    "col0": "\n            \n\n\n\n\n\n\n\n\n\n\n\n\nDONKI Header\n\n\n\n\n  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n  ga('create', 'UA-43747106-1', 'auto');\n  ga('send', 'pageview');\n\n\n\n\n\n\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-CW9J2XG88Y');\n\n\n\n\t\n\t\t  \n\t\tCCMC DONKI\n\t\n\n\n        "
+  },
+  {
+    "col0": "\n            \n\n\n\n\n\n\n\n\nDONKI: Menu Page\n\n\n\tGo to:\n\t\n\t\tAbout CCMC DONKI\n\t\tDONKI Dash: Explore Visually\n\t\t\n\t\t\n\t\t\n\t\t\t\n\t\t\n\t\t\t\n\t\t\n\t\t Search Space Weather Activity\n\t\t\n\t\t Search Notification Archive\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t Login\n\t\t\n\t\t\n\n\n\t\n\n\n\n        ",
+    "col1": "\n            \n\n\n\n\n\n\n\n\n\nDONKI: Search Space Weather Activity Result Page\n \n \n\n\n\nSpace Weather Activity Search Results\n\n\nExplore these results visually on 'DONKI Dash' from 2025-07-24 to 2025-07-31\n\n \n \n \n \n \n\n \n\n$(document).ready(function() {\n\t$.tablesorter.addParser({\n\t\tid: 'abs',\n\t\tis: function(s) { return false; },\n\t\tformat: function(s){ return Math.abs(s); },\n\t\ttype: 'numeric'\n\t});\n\t\n\t$.tablesorter.addParser({\n\t\tid: 'customDate',\n\t\tis: function() { return false; },\n\t\tformat: function(s){\n\t\t\ts = s.split(\"(\");\n\t\t\ts = s[0];\n\t\t\ts= s.replace(/\\-/g, \" \");\n\t\t\ts = s.replace(/:/g,\" \");\n\t\t\ts = s.replace(/T/g,\" \");\n\t\t\ts = s.replace(/Z/g,\" \");\n\t\t\ts = s.split(\" \");\n\t\t\treturn $.tablesorter.formatFloat(new Date(s[0], s[1]-1, s[2], s[3], s[4]).getTime());\n\t\t},\n\t\ttype: 'numeric'\n\t});\n\t\t\t\n\t// add parser through the tablesorter addParser method \n    $.tablesorter.addParser({\n        // set a unique id \n        id: 'links',\n        is: function(s)\n        {\n            // return false so this parser is not auto detected \n            return false;\n        },\n        format: function(s)\n        { \n            return s.replace(new RegExp(/\u003c.*?\u003e/),\"\");\n        },\n        // set type, either numeric or text\n        type: 'text'\n    }); \n\t\n\t$(\"#FLR_table\").tablesorter({\n\t\theaders: {\n\t\t\t4: { sorter: 'customDate'},\n\t\t\t5: { sorter: 'customDate'},\n\t\t\t9: { sorter: 'links'}\n\t\t}\n\t});\n\t\n\t$(\"#SEP_table\").tablesorter({\n\t\theaders: {\n\t\t\t3: { sorter: 'links'}\n\t\t}\n\t});\n\n\t$(\"#IPS_table\").tablesorter({\n\t\theaders: {\n\t\t\t7: { sorter: 'links'}\n\t\t}\n\t});\n\t\n\t$(\"#MPC_table\").tablesorter({\n\t\theaders: {\n\t\t\t3: { sorter: 'links'}\n\t\t}\n\t});\n\t\n\t$(\"#GST_table\").tablesorter({\n\t\theaders: {\n\t\t\t4: { sorter: 'links'}\n\t\t}\n\t});\n\t\t\n\t$(\"#RBE_table\").tablesorter({\n\t\theaders: {\n\t\t\t2: { sorter: 'customDate'},\n\t\t\t4: { sorter: 'links'}\n\t\t}\n\t});\n\t\n\t$(\"#HSS_table\").tablesorter({\n\t\theaders: {\n\t\t\t4: { sorter: 'links'}\n\t\t}\n\t});\n\t\n\t$(\"#ENLIL_table\").tablesorter({\n\t\theaders: {\n\t\t\t1: { sorter: 'customDate'}\n\t\t}\n\t});\n\t\n\t$(\"#CMEAnalysis_table\").tablesorter({\n\t\theaders: {\n\t\t\t2: { sorter: 'abs'},\n\t\t\t5: { sorter: 'abs'},\n\t\t\t6: { sorter: 'abs'},\n\t\t\t7: { sorter: 'abs'},\n\t\t\t9: { sorter: 'abs'},\n\t\t\t10: { sorter: 'customDate'}\n\t\t}\n\t});\n\t\n\t$(\"table\").tablesorter({\n\t\theaders: {\n\t\t\t2: { sorter: 'abs'},\n\t\t\t4: { sorter: 'abs'},\n\t\t\t5: { sorter: 'abs'},\n\t\t\t6: { sorter: 'abs'},\n\t\t\t8: { sorter: 'abs'},\n\t\t\t9: { sorter: 'customDate'}\t\t\t \n\t\t}\n\t});\n\t \n\t\n\t$(\"#Alert_table\").tablesorter({\n\t\theaders: {\n\t\t\t1: { sorter: 'customDate'}\n\t\t}\n\t});\n\t\n\t$(\"#Report_table\").tablesorter({\n\t\theaders: {\n\t\t\t2: { sorter: 'customDate'},\n\t\t\t3: { sorter: 'customDate'}\n\t\t}\n\t});\n\t\n\t$(\"#Anomaly_Report_table\").tablesorter({\n\t\theaders: {\n\t\t\t1: { sorter: 'customDate'}\n\t\t}\n\t});\n\t\n\t$(\"#SEeffect_Report_table\").tablesorter({\n\t\theaders: {\n\t\t\t3: { sorter: 'customDate'}\n\t\t}\n\t});\n});\t\t\t \n\t \n\n\n\n.tooltip {\n    position: relative;\n    display: inline-block;\n    border-bottom: 1px dotted black;\n}\n\n.tooltip .tooltiptext {\n    visibility: hidden;\n    width: 120px;\n    background-color: #555;\n    color: #fff;\n    text-align: center;\n    border-radius: 6px;\n    padding: 5px 0;\n    position: absolute;\n    z-index: 1;\n    bottom: 125%;\n    left: 50%;\n    margin-left: -60px;\n    opacity: 0;\n    transition: opacity 1s;\n}\n\n.tooltip .tooltiptext::after {\n    content: \"\";\n    position: absolute;\n    top: 100%;\n    left: 50%;\n    margin-left: -5px;\n    border-width: 5px;\n    border-style: solid;\n    border-color: #555 transparent transparent transparent;\n}\n\n.tooltip:hover .tooltiptext {\n    visibility: visible;\n    opacity: 1;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\t\n\t\tEvent Type\n\t\tCatalog\n\t\tStart Time (UT)\n\t\tAssociated Instrument\n\t\tPeak Time\n\t\tEnd Time\n\t\tClass\n\t\tSource Location\n\t\tActive Region Number\n\t\tDirectly Linked Event(s)\n\t\n\n\n\n\t\n\t\t\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t\n\t\tM2M_CATALOG\n\t\t2025-07-24  05:24\n\t\tGOES-P: EXIS 1.0-8.0\n\t\t2025-07-24T05:45Z\n\t\t2025-07-24T05:55Z\n\t\tC8.1\n\t\tS26W90\n\t\t14145\n\t\t\n\t\t\t\n\t\t\t\t2025-07-24T06:24:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t\n\t\tM2M_CATALOG\n\t\t2025-07-29  21:59\n\t\tGOES-P: EXIS 1.0-8.0\n\t\t2025-07-29T22:05Z\n\t\t2025-07-29T22:07Z\n\t\tC3.7\n\t\tN09W90\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t2025-07-30T03:36:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t\n\t\t\n\t\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n        ",
+    "col10": "14145",
+    "col11": "\n\t\t\t\n\t\t\t\t2025-07-24T06:24:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t",
+    "col12": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col13": "M2M_CATALOG",
+    "col14": "2025-07-29  21:59",
+    "col15": "GOES-P: EXIS 1.0-8.0",
+    "col16": "2025-07-29T22:05Z",
+    "col17": "2025-07-29T22:07Z",
+    "col18": "C3.7",
+    "col19": "N09W90",
+    "col2": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col20": "",
+    "col21": "\n\t\t\t\n\t\t\t\t2025-07-30T03:36:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t",
+    "col3": "M2M_CATALOG",
+    "col4": "2025-07-24  05:24",
+    "col5": "GOES-P: EXIS 1.0-8.0",
+    "col6": "2025-07-24T05:45Z",
+    "col7": "2025-07-24T05:55Z",
+    "col8": "C8.1",
+    "col9": "S26W90"
+  },
+  {
+    "col0": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col1": "M2M_CATALOG",
+    "col2": "2025-07-24  05:24",
+    "col3": "GOES-P: EXIS 1.0-8.0",
+    "col4": "2025-07-24T05:45Z",
+    "col5": "2025-07-24T05:55Z",
+    "col6": "C8.1",
+    "col7": "S26W90",
+    "col8": "14145",
+    "col9": "\n\t\t\t\n\t\t\t\t2025-07-24T06:24:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t"
+  },
+  {
+    "col0": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col1": "M2M_CATALOG",
+    "col2": "2025-07-29  21:59",
+    "col3": "GOES-P: EXIS 1.0-8.0",
+    "col4": "2025-07-29T22:05Z",
+    "col5": "2025-07-29T22:07Z",
+    "col6": "C3.7",
+    "col7": "N09W90",
+    "col8": "",
+    "col9": "\n\t\t\t\n\t\t\t\t2025-07-30T03:36:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t"
+  },
+  {
+    "col0": "\n            \n\n\n\n\n\nInsert title here\n\n\n\n\nThe Moon to Mars Space Weather Analysis Office and other entities provide data to DONKI as a courtesy to the community.\nBy visiting this site, you acknowledge that you understand and agree to the Important Disclaimer Notice\n\n\n\nIf you are looking for the official U.S. Government forecast for space weather, please go to NOAA's Space Weather Prediction Center (https://swpc.noaa.gov). This \"Experimental Research Information\" consists of preliminary NASA research products and should be interpreted and used accordingly.\n\n\n \n\nCurator: Chiu Wiegand |\nNASA Official: Dr. Masha Kuznetsova |\nPrivacy and Security Notices |\nAccessibility |\nCCMC Data Policy\n\n\n \n\n\n\n        "
+  },
+  {
+    "col0": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col1": "M2M_CATALOG",
+    "col2": "2025-07-24  05:24",
+    "col3": "GOES-P: EXIS 1.0-8.0",
+    "col4": "2025-07-24T05:45Z",
+    "col5": "2025-07-24T05:55Z",
+    "col6": "C8.1",
+    "col7": "S26W90",
+    "col8": "14145",
+    "col9": "\n\t\t\t\n\t\t\t\t2025-07-24T06:24:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t"
+  },
+  {
+    "col0": "\n\t\t\t\n\t\t\tSolar Flare\n\t\t\t\n\t\t",
+    "col1": "M2M_CATALOG",
+    "col2": "2025-07-29  21:59",
+    "col3": "GOES-P: EXIS 1.0-8.0",
+    "col4": "2025-07-29T22:05Z",
+    "col5": "2025-07-29T22:07Z",
+    "col6": "C3.7",
+    "col7": "N09W90",
+    "col8": "",
+    "col9": "\n\t\t\t\n\t\t\t\t2025-07-30T03:36:00-CME-001\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\n\t\t"
+  }
+]
